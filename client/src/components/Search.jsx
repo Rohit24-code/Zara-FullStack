@@ -42,12 +42,12 @@ function Search() {
   const [sort, setSort] = useState("");
 
   useEffect(() => {
-    axios
-      .get(`https://thawing-falls-87331.herokuapp.com/product`)
-      .then((res) => {
-        setData(res.data);
-        setLoading(false);
-      });
+  axios
+    .get(`https://thawing-falls-87331.herokuapp.com/product?sort=${sort}`)
+    .then((res) => {
+      setData(res.data);
+      setLoading(false);
+    });
   }, [sort]);
   return (
     <Box>
@@ -73,7 +73,7 @@ function Search() {
 
           <form onSubmit={getsearch}>
             <Input
-              width="10%"
+              width="12%"
               onChange={(e) => setText(e.target.value)}
               border="none"
               borderRadius="0"
@@ -81,7 +81,7 @@ function Search() {
               borderColor="black"
               type="text"
               value={text}
-              placeholder="search items...."
+              placeholder="search items"
             />
             <Button bgColor="red" display="none" color="black">
               submit
@@ -89,9 +89,9 @@ function Search() {
           </form>
         </Box>
         {loading ? (
-          <Box width="400px" height="400px" bgColor="white">
+          // <Box width="400px" height="400px" bgColor="white">
             <Loading />
-          </Box>
+          // </Box>
         ) : (
           <Flex wrap="wrap">
             {data.map((el) => {

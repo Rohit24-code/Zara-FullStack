@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import Singledata from "./Singledata";
 import Loading from "./Loading";
 import Footer from "./Footer";
-import Filter from "./Filter";
 import { Helmet } from "react-helmet";
 
 function Women() {
@@ -37,7 +36,6 @@ function Women() {
         </Flex>
       )}
       <Footer />
-      <Filter />
     </Box>
   );
 }

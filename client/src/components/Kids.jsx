@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import Singledata from "./Singledata";
 import Loading from "./Loading";
 import Footer from "./Footer";
-import Filter from "./Filter";
 import axios from "axios";
 import { Helmet } from "react-helmet";
 
@@ -36,7 +35,7 @@ function Kids() {
           })}
         </Flex>
       )}
-      <Filter />
+    
       <Footer />
     </Box>
   );
