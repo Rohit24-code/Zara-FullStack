@@ -5,6 +5,7 @@ import Singledata from "./Singledata";
 import Loading from "./Loading";
 import Footer from "./Footer";
 import Filter from "./Filter";
+import { Helmet } from "react-helmet";
 
 function Women() {
   const [data, setData] = useState([]);
@@ -19,6 +20,13 @@ function Women() {
 
   return (
     <Box>
+      <Helmet>
+        <title>view All Best Seller Women</title>
+        <meta
+          name="description"
+          content="Latest trends in clothing for women at zara"
+        />
+      </Helmet>
       {loading ? (
         <Loading />
       ) : (

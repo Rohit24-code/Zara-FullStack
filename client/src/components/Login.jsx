@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Input, Text, useToast } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useContext, useState } from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 import Footer from "./Footer";
@@ -41,6 +42,13 @@ function Login() {
 
   return (
     <Box>
+      <Helmet>
+        <title>ZARA Login</title>
+        <meta
+          name="description"
+          content="Login section"
+        />
+      </Helmet>
       <Box>
         <Navbar />
       </Box>

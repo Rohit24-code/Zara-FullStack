@@ -9,6 +9,7 @@ import {
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 
@@ -148,6 +149,13 @@ function Signin() {
 
   return (
     <Box>
+      <Helmet>
+        <title>ZARA Sign in</title>
+        <meta
+          name="description"
+          content="sign in at zara"
+        />
+      </Helmet>
       <Container>
         <Box mt="35%">
           <Text fontSize="md" fontWeight="600">

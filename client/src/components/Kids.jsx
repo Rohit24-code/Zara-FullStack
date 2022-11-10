@@ -5,8 +5,10 @@ import Loading from "./Loading";
 import Footer from "./Footer";
 import Filter from "./Filter";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 function Kids() {
+
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -18,6 +20,13 @@ function Kids() {
   }, []);
   return (
     <Box>
+      <Helmet>
+        <title>ZARA kids</title>
+        <meta
+          name="description"
+          content="Latest trends in clothing for kids at zara"
+        />
+      </Helmet>
       {loading ? (
         <Loading />
       ) : (

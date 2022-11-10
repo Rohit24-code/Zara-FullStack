@@ -8,11 +8,18 @@ import {
 import Footer from './Footer';
 import { Appcontext } from '../Context/AppContext';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 function Cart() {
   const { state, dispatch ,total} = useContext(Appcontext);
   return (
     <Box>
+      <Helmet>
+       <title>Zara Cart</title>
+        <meta
+          name="description"
+          content="cart at zara"/>
+      </Helmet>
       <Box ml="195px">
         <Flex mt={150} gap="35px">
           <Text fontSize="lg" fontWeight="500">

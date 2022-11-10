@@ -16,6 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { Select } from "@chakra-ui/react";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const item = ["price", "size", "type1", "type2", "type3", "prod_name"];
 function Search() {
@@ -50,6 +51,13 @@ function Search() {
   }, [sort]);
   return (
     <Box>
+      <Helmet>
+        <title>ZARA Search</title>
+        <meta
+          name="description"
+          content="search for varities at zara"
+        />
+      </Helmet>
       <Box>
         <Box ml="200px">
           <Text

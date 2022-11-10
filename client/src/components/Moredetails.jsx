@@ -16,6 +16,7 @@ import {
   Input
 } from "@chakra-ui/react";
 import './moredetails.css'
+import { Helmet } from 'react-helmet';
 function Moredetails() {
    const { pagedata} = useContext(SingleContext);
     const { state, dispatch } = useContext(Appcontext);
@@ -24,6 +25,10 @@ function Moredetails() {
 
   return (
     <Box>
+      <Helmet>
+        <title>ZARA {pagedata.prod_name}</title>
+        <meta name="description" content={pagedata.description} />
+      </Helmet>
       <Box mt="84px" alignItems="center" ml="16%" className="scrolldetails">
         <Flex direction={["column", "row", "row"]} gap={20}>
           <Box width={["100%", "20%", "20%"]} mt="10%">
@@ -164,14 +169,14 @@ function Moredetails() {
 
             <DrawerBody>
               <Box maxHeight="85%" overflow="auto" mt="20px" p="2px">
-                {state.cart.map((el,i) => {
+                {state.cart.map((el, i) => {
                   return (
                     <Box mt={8} key={i}>
                       <Flex justify="space-around">
                         <Box>
                           <Text mb={1}>{el.prod_name}</Text>
                           <Image
-                            boxSize='100%'
+                            boxSize="100%"
                             objectFit="cover"
                             src={el.imgUrl}
                             alt=""

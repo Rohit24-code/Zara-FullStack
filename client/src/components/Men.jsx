@@ -5,6 +5,7 @@ import Singledata from "./Singledata";
 import Loading from "./Loading";
 import Footer from "./Footer";
 import Filter from "./Filter";
+import { Helmet } from "react-helmet";
 
 function Men() {
   const [data, setData] = useState([]);
@@ -19,6 +20,13 @@ function Men() {
 
   return (
     <Box>
+      <Helmet>
+        <title>ZARA Mens</title>
+        <meta
+          name="description"
+          content="Latest trends in clothing for mens at zara"
+        />
+      </Helmet>
       {loading ? (
         <Loading />
       ) : (
